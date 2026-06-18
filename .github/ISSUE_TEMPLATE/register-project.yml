@@ -26,12 +26,27 @@ body:
     validations:
       required: true
   - type: input
-    id: maintainer
+    id: name
     attributes:
-      label: Lead maintainer / contact
-      description: Name + email or GitHub handle
+      label: Name
+      description: Lead maintainer / point of contact
     validations:
       required: true
+  - type: input
+    id: email
+    attributes:
+      label: Email
+      description: So we can stay in touch about coordination
+      placeholder: you@example.org
+    validations:
+      required: true
+  - type: input
+    id: github
+    attributes:
+      label: GitHub handle
+      placeholder: "@username"
+    validations:
+      required: false
   - type: dropdown
     id: language
     attributes:

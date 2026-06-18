@@ -1,0 +1,440 @@
+/*-- scss:defaults --*/
+
+// QuantEcon brand fonts (Source Sans Pro / PT Serif / Source Code Pro),
+// matching quantecon-book-theme. Loaded from Google Fonts when online;
+// the fallback stack keeps the deck clean offline.
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Source+Code+Pro:wght@400;600&family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
+
+// Brand palette — from quantecon-book-theme _colors.scss + the logo mark.
+$qe-blue:    #0072bc;   // primary
+$qe-navy:    #07365c;   // dark variant for title / closing slides
+$qe-coral:   #d8655e;   // secondary
+$qe-teal:    #005f5f;   // emphasis
+$qe-amber:   #875f00;   // definition
+$qe-green:   #4a9b54;
+$qe-ink:     #2b2b2b;
+$qe-body:    #444444;
+$qe-muted:   #6b7785;
+$qe-bg-soft: #f4f7fa;
+$qe-border:  #dbe3ec;
+
+$font-family-sans-serif: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-monospace: "Source Code Pro", SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace !default;
+
+// Reveal core variables
+$body-bg: #ffffff;
+$body-color: $qe-body;
+$link-color: $qe-blue;
+$link-color-hover: #005a96;
+$selection-bg: rgba($qe-blue, 0.22);
+$selection-color: #ffffff;
+
+$presentation-font-size-root: 32px;
+$presentation-line-height: 1.35;
+$presentation-heading-font: $font-family-sans-serif;
+$presentation-heading-color: $qe-navy;
+$presentation-heading-font-weight: 700;
+$presentation-heading-line-height: 1.1;
+$presentation-h1-font-size: 2.0em;
+$presentation-h2-font-size: 1.42em;
+$presentation-h3-font-size: 1.1em;
+$code-block-font-size: 0.6em;
+
+/*-- scss:rules --*/
+
+.reveal {
+  font-weight: 400;
+  letter-spacing: -0.003em;
+}
+
+// center: true balances each slide vertically; reveal also sets the slides
+// to text-align:center — override that at the source so content is left-aligned,
+// and let the .center helper opt back in where wanted.
+.reveal h1, .reveal h2, .reveal h3, .reveal h4,
+.reveal .slides section > p,
+.reveal .slides section > ul,
+.reveal .slides section > ol,
+.reveal .card, .reveal .phase, .reveal .role,
+.reveal .contrib .ct,
+.reveal .qe-matrix { text-align: left; }
+.reveal .center { text-align: center !important; }
+
+// Section headings get a short QuantEcon-blue accent rule
+.reveal h2 {
+  position: relative;
+  margin-bottom: 0.6em;
+  padding-bottom: 0.2em;
+  letter-spacing: -0.012em;
+}
+.reveal h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 2.2em;
+  height: 4px;
+  background: $qe-blue;
+  border-radius: 3px;
+}
+
+.reveal p,
+.reveal li { line-height: 1.4; }
+.reveal ul { margin-left: 0.3em; }
+.reveal li { margin: 0.2em 0; }
+.reveal strong { color: $qe-navy; font-weight: 700; }
+.reveal em { color: $qe-teal; font-style: italic; }
+
+.reveal a {
+  text-decoration: none;
+  border-bottom: 1px solid rgba($qe-blue, 0.35);
+}
+.reveal a:hover { border-bottom-color: $qe-blue; }
+
+// Logo (the colored wave mark) bottom-right on every slide
+.reveal .slide-logo {
+  height: 36px !important;
+  max-height: 36px !important;
+  bottom: 16px !important;
+  right: 22px !important;
+  opacity: 0.92;
+}
+
+.reveal .slide-number {
+  background: transparent;
+  color: $qe-muted;
+  font-size: 0.48em;
+  font-weight: 600;
+}
+
+/* ---------- Title slide (dark navy) ---------- */
+.reveal #title-slide {
+  text-align: left;
+  color: #ffffff;
+}
+.reveal #title-slide .title {
+  color: #ffffff;
+  font-size: 1.95em;
+  font-weight: 700;
+  line-height: 1.08;
+  margin-bottom: 0.28em;
+  letter-spacing: -0.018em;
+}
+.reveal #title-slide .subtitle {
+  color: #9ed0f5;
+  font-size: 0.82em;
+  font-weight: 600;
+  margin-bottom: 1.4em;
+}
+.reveal #title-slide .quarto-title-authors,
+.reveal #title-slide .author,
+.reveal #title-slide .date,
+.reveal #title-slide p {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.82em;
+  font-weight: 600;
+}
+// Left-align the author block under the title; hide the redundant
+// standalone date (it already appears in the subtitle).
+.reveal #title-slide .quarto-title-authors {
+  display: block;
+  text-align: left;
+  justify-content: flex-start;
+  margin: 0;
+}
+.reveal #title-slide .date { display: none; }
+
+/* ---------- Dark slide (closing) ---------- */
+.reveal section.dark-slide h1,
+.reveal section.dark-slide h2,
+.reveal section.dark-slide h3,
+.reveal section.dark-slide p,
+.reveal section.dark-slide li,
+.reveal section.dark-slide strong { color: #ffffff !important; }
+.reveal section.dark-slide em { color: #9ed0f5 !important; }
+.reveal section.dark-slide h2::after { background: #9ed0f5; }
+.reveal section.dark-slide a {
+  color: #9ed0f5;
+  border-bottom-color: rgba(158, 208, 245, 0.5);
+}
+
+/* ---------- Toolkit chips ---------- */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45em 0.5em;
+  margin: 0.5em 0 0.3em;
+}
+.chips.center { justify-content: center; }
+.chip {
+  display: inline-block;
+  font-size: 0.6em;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.45em 0.8em;
+  border-radius: 999px;
+  border: 1px solid $qe-border;
+  background: $qe-bg-soft;
+  color: $qe-ink;
+  white-space: nowrap;
+}
+.chip .lang {
+  opacity: 0.55;
+  font-weight: 600;
+  margin-left: 0.35em;
+  font-size: 0.85em;
+}
+// Project pills are coloured by language — kept consistent across every slide.
+.chip.py  { border-color: #bcd9f0; background: #eaf4fc; }  // Python  → blue
+.chip.jl  { border-color: #cfc4ec; background: #f1ecfb; }  // Julia   → purple
+.chip.mat { border-color: #f0dcb0; background: #fbf3e2; }  // MATLAB  → amber
+.chip.cpp { border-color: #c3e3c8; background: #eaf6ec; }  // C++     → green
+
+// Example-query pills (AI slide) are not projects — distinct italic style.
+.chip.query {
+  background: #ffffff;
+  border-color: #cfe0f0;
+  color: $qe-navy;
+  font-style: italic;
+  font-weight: 600;
+}
+
+/* ---------- Headline stat band (Who is QuantEcon) ---------- */
+.statband {
+  display: flex;
+  gap: 0.7em;
+  margin: 0.3em 0;
+}
+.stat {
+  flex: 1;
+  text-align: center;
+  background: $qe-bg-soft;
+  border: 1px solid $qe-border;
+  border-radius: 8px;
+  padding: 0.55em 0.4em 0.6em;
+}
+.stat .num {
+  display: block;
+  font-size: 1.7em;
+  font-weight: 800;
+  color: $qe-blue;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+.stat .lbl {
+  display: block;
+  font-size: 0.52em;
+  color: $qe-muted;
+  font-weight: 600;
+  margin-top: 0.35em;
+}
+.reveal section.spread .statband { margin: 1.1em 0; }
+
+/* ---------- "Why it works" cards ---------- */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7em 0.7em;
+  margin-top: 0.5em;
+}
+.cards.three { grid-template-columns: 1fr 1fr 1fr; }
+// Example-query chips folded into a card (e.g. the AI-substrate aim).
+.card .chips { margin-top: 0.5em; gap: 0.4em; }
+.card .chip.query { font-size: 0.52em; padding: 0.4em 0.7em; }
+.card {
+  border: 1px solid $qe-border;
+  border-left: 5px solid $qe-blue;
+  border-radius: 8px;
+  padding: 0.72em 0.95em 0.78em;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(16, 42, 67, 0.05);
+}
+.card h3 { margin: 0 0 0.22em; font-size: 0.84em; font-weight: 700; color: $qe-navy; }
+.card p  { margin: 0; font-size: 0.64em; line-height: 1.38; color: $qe-body; }
+.card.blue  { border-left-color: $qe-blue; }  .card.blue  h3 { color: $qe-blue; }
+.card.coral { border-left-color: $qe-coral; } .card.coral h3 { color: $qe-coral; }
+.card.teal  { border-left-color: $qe-teal; }  .card.teal  h3 { color: $qe-teal; }
+.card.amber { border-left-color: $qe-amber; } .card.amber h3 { color: $qe-amber; }
+
+/* ---------- Coordination matrix ---------- */
+.qe-matrix {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.56em;
+  margin-top: 0.3em;
+}
+.qe-matrix th:nth-child(1), .qe-matrix td:nth-child(1) { width: 23%; }
+.qe-matrix th:nth-child(2), .qe-matrix td:nth-child(2) { width: 22%; }
+.qe-matrix th {
+  text-align: left;
+  color: #ffffff;
+  background: $qe-navy;
+  padding: 0.4em 0.65em;
+  font-weight: 600;
+}
+.qe-matrix th:first-child { border-top-left-radius: 8px; }
+.qe-matrix th:last-child  { border-top-right-radius: 8px; }
+.qe-matrix td {
+  padding: 0.38em 0.65em;
+  border-bottom: 1px solid $qe-border;
+  vertical-align: middle;
+}
+.qe-matrix tr:last-child td { border-bottom: none; }
+.qe-matrix .cls  { font-weight: 700; color: $qe-navy; }
+.qe-matrix .base { color: $qe-teal; font-weight: 600; font-style: italic; }
+.qe-matrix .tools .chip {
+  font-size: 0.9em;
+  padding: 0.3em 0.6em;
+  margin: 0.12em 0.12em 0 0;
+}
+
+/* ---------- Roadmap phases ---------- */
+.phases {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85em;
+  margin-top: 0.5em;
+}
+.phase {
+  border: 1px solid $qe-border;
+  border-radius: 10px;
+  padding: 0.8em 1em 0.9em;
+  background: #ffffff;
+  position: relative;
+}
+.phase .ph-tag {
+  display: inline-block;
+  font-size: 0.5em;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: $qe-blue;
+  padding: 0.3em 0.65em;
+  border-radius: 999px;
+}
+.phase.two .ph-tag { background: $qe-teal; }
+.phase .when {
+  position: absolute;
+  top: 0.85em;
+  right: 0.9em;
+  font-size: 0.5em;
+  color: $qe-muted;
+  font-weight: 700;
+}
+.phase h3 { margin: 0.45em 0 0.3em; font-size: 0.9em; color: $qe-navy; }
+.phase ul { margin: 0.1em 0 0 0.95em; padding: 0; }
+.phase li { font-size: 0.62em; line-height: 1.36; margin: 0.24em 0; }
+
+/* ---------- Division of responsibility ---------- */
+.roles {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.6em;
+  margin-top: 0.4em;
+}
+.role {
+  border-top: 4px solid $qe-blue;
+  background: $qe-bg-soft;
+  border-radius: 0 0 8px 8px;
+  padding: 0.55em 0.72em 0.6em;
+}
+.role.q { border-top-color: $qe-blue; }
+.role.p { border-top-color: $qe-coral; }
+.role.e { border-top-color: $qe-amber; }
+.role h3 { margin: 0 0 0.28em; font-size: 0.72em; color: $qe-navy; }
+.role ul { margin: 0 0 0 0.9em; padding: 0; }
+.role li { font-size: 0.55em; line-height: 1.32; margin: 0.2em 0; }
+
+/* ---------- Helpers ---------- */
+.lead {
+  font-size: 1.3em;
+  color: $qe-navy;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* ---------- Two contributions (baseline + hero tutorial) ---------- */
+.contribs {
+  display: flex;
+  gap: 0.7em;
+  margin: 0.55em 0 0.3em;
+}
+.contrib {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.55em;
+  border: 1px solid $qe-border;
+  border-radius: 9px;
+  padding: 0.42em 0.7em;
+  background: $qe-bg-soft;
+}
+.contrib .num {
+  flex: 0 0 auto;
+  width: 1.5em;
+  height: 1.5em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: $qe-blue;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.7em;
+}
+.contrib .ct { display: flex; flex-direction: column; line-height: 1.2; }
+.contrib .ct strong { font-size: 0.72em; color: $qe-navy; }
+.contrib .ct span { font-size: 0.56em; color: $qe-muted; }
+// The hero tutorial is the draw for authors — give it a warm highlight.
+.contrib.hero {
+  background: #fdf1ef;
+  border-color: #eebfba;
+}
+.contrib.hero .num { background: $qe-coral; }
+.contrib.hero .ct strong { color: $qe-coral; }
+.muted { color: $qe-muted; }
+.small { font-size: 0.62em; }
+.center { text-align: center; }
+.pull {
+  border-left: 4px solid $qe-coral;
+  padding: 0.1em 0 0.1em 0.7em;
+  margin: 0.55em 0 0.2em;
+  font-size: 1.05em;
+  color: $qe-navy;
+  font-style: italic;
+}
+// Content slides marked {.spread}: open up the vertical rhythm so the
+// content breathes into the full slide height instead of bunching as a
+// short centered block. Scoped per block type to keep dense slides safe.
+.reveal section.spread > p { margin: 0.95em 0; }
+.reveal section.spread > ul { margin: 0.9em 0; }
+.reveal section.spread > ul > li { margin: 0.55em 0; }
+
+.reveal section.spread .chips { margin: 1.35em 0; gap: 0.7em 0.55em; }
+.reveal section.spread .chip  { padding: 0.6em 0.95em; }
+.reveal section.spread .pull  { margin: 1.25em 0 0.3em; }
+
+.reveal section.spread .contribs  { margin: 1.2em 0 1.0em; }
+.reveal section.spread .cards     { margin-top: 1.15em; row-gap: 1.2em; }
+.reveal section.spread .qe-matrix { margin-top: 1.0em; }
+.reveal section.spread .qe-matrix td { padding-top: 0.78em; padding-bottom: 0.78em; }
+.reveal section.spread .phases    { margin-top: 1.25em; }
+.reveal section.spread .roles     { margin-top: 1.15em; }
+
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.6em;
+  font-weight: 700;
+  color: $qe-blue;
+  margin-bottom: 0.3em;
+}
+.source {
+  position: absolute;
+  bottom: 14px;
+  left: 24px;
+  font-size: 0.42em;
+  color: $qe-muted;
+}

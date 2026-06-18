@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: About the project
+    url: https://github.com/QuantEcon/conference-cef2026#readme
+    about: Read about the Community Reference Library proposal before registering.

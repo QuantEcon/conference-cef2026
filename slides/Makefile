@@ -1,6 +1,6 @@
 # Build the CEF 2026 talk (reveal.js) from Markdown.
 #
-# Requires: Quarto (https://quarto.org). Already installed on this machine.
+# Requires: Quarto — install from https://quarto.org/docs/get-started/.
 #
 # Usage:
 #   make            # render slides.html (self-contained)

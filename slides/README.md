@@ -20,8 +20,10 @@ make preview  # live-reloading preview in the browser
 make clean
 ```
 
-`slides.html` is self-contained (`embed-resources`), so it runs offline from a
-single file. It is git-ignored here — it's a build artifact.
+`slides.html` embeds its resources (`embed-resources`), so it runs from a single
+file and works offline — with one caveat: fonts load from Google Fonts when
+online, falling back to a system stack offline. It is git-ignored here — it's a
+build artifact.
 
 ## Publishing
 

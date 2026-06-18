@@ -73,5 +73,5 @@ body:
     attributes:
       label: Confirmation
       options:
-        - label: Our project authors and maintains its own content, and retains credit and editorial control.
+        - label: We author and maintain our own content, and retain credit and editorial control.
           required: true

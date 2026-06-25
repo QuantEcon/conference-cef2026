@@ -26,18 +26,18 @@ format:
 
 ## A dozen serious toolkits — no way to find them {.spread}
 
-The field has more than a dozen mature open-source toolkits, across **MATLAB, Python, and Julia**:
+The field has a dozen mature open-source toolkits, across **MATLAB, Python, and Julia**:
 
 <div class="chips">
   <span class="chip mat">Dynare <span class="lang">MATLAB</span></span>
   <span class="chip mat">VFI Toolkit <span class="lang">MATLAB</span></span>
   <span class="chip mat">GDSGE <span class="lang">MATLAB</span></span>
-  <span class="chip mat">G-Cubed / SYM <span class="lang">MATLAB</span></span>
+  <span class="chip py">G-Cubed / SYM <span class="lang">Python / SYM</span></span>
   <span class="chip py">HARK / Econ-ARK <span class="lang">Python</span></span>
   <span class="chip py">GEModelTools <span class="lang">Python</span></span>
   <span class="chip py">sequence-jacobian <span class="lang">Python</span></span>
   <span class="chip py">Mesa <span class="lang">Python</span></span>
-  <span class="chip py">Dolo / DolARK <span class="lang">Py · Jl</span></span>
+  <span class="chip py">Dolo / Dolark <span class="lang">Py · Jl</span></span>
   <span class="chip jl">BASEforHANK <span class="lang">Julia</span></span>
   <span class="chip cpp">Eurace / FLAME <span class="lang">C++</span></span>
   <span class="chip">AGENTBLOCKS</span>

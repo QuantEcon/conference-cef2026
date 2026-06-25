@@ -110,6 +110,14 @@ $code-block-font-size: 0.6em;
 .reveal #title-slide {
   text-align: left;
   color: #ffffff;
+  // Fill the slide height (center:true otherwise shrinks the section to its
+  // content) so the URL below can pin to the true bottom edge; keep the title
+  // block vertically centred with flexbox.
+  height: 100% !important;
+  top: 0 !important;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
 }
 .reveal #title-slide .title {
   color: #ffffff;
@@ -142,6 +150,19 @@ $code-block-font-size: 0.6em;
   margin: 0;
 }
 .reveal #title-slide .date { display: none; }
+// Published-deck URL, pinned to the bottom-left of the title slide.
+// Injected as a real <a> (see include-after-body) so it's clickable & selectable.
+.reveal #title-slide .title-url {
+  position: absolute;
+  left: 0;
+  bottom: 22px;
+  font-size: 0.62em;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #9ed0f5;
+  border-bottom: none;
+}
+.reveal #title-slide .title-url:hover { color: #ffffff; }
 
 /* ---------- Dark slide (closing) ---------- */
 .reveal section.dark-slide h1,
@@ -228,6 +249,11 @@ $code-block-font-size: 0.6em;
   margin-top: 0.35em;
 }
 .reveal section.spread .statband { margin: 1.1em 0; }
+// Compact variant — for slides where the band shares space with other blocks.
+.statband.compact { gap: 0.55em; margin: 0.15em 0; }
+.statband.compact .stat { padding: 0.4em 0.4em 0.45em; }
+.statband.compact .num  { font-size: 1.4em; }
+.statband.compact .lbl  { font-size: 0.5em; margin-top: 0.2em; }
 
 /* ---------- "Why it works" cards ---------- */
 .cards {
@@ -254,6 +280,37 @@ $code-block-font-size: 0.6em;
 .card.coral { border-left-color: $qe-coral; } .card.coral h3 { color: $qe-coral; }
 .card.teal  { border-left-color: $qe-teal; }  .card.teal  h3 { color: $qe-teal; }
 .card.amber { border-left-color: $qe-amber; } .card.amber h3 { color: $qe-amber; }
+// Highlight the focus card with a thin red ring (outline keeps the grid layout intact).
+.card.highlight { outline: 2px solid #d62828; outline-offset: 7px; }
+
+/* ---------- Aims: one primary, two supporting ---------- */
+// Small labels mark the hierarchy: the priority sits above a prominent
+// full-width card; the two it "builds toward" follow as a muted pair.
+// The "Building towards" label separates the supporting pair from the
+// headline aim above it; muted so it doesn't compete with the cards.
+.aims .aim-label {
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.56em;
+  font-weight: 700;
+  color: $qe-muted;
+  margin: 1.0em 0 0.45em;
+}
+// The primary aim is tinted and larger so it reads as the headline.
+.card.primary {
+  background: #eef6fd;
+  border-left-width: 6px;
+  padding: 0.85em 1.1em 0.9em;
+}
+.card.primary h3 { font-size: 1.0em; }
+.card.primary p  { font-size: 0.72em; }
+// Keep each label tight to its own cards (override the spread top margin).
+.reveal section.spread .aims .cards { margin-top: 0.45em; row-gap: 0.7em; }
+// Chips inside a card shouldn't inherit the airy slide spacing — keep them
+// compact so the supporting cards stay balanced instead of sprawling.
+.reveal section.spread .aims .card .chips { margin: 0.6em 0 0; gap: 0.4em; }
+.reveal section.spread .aims .card .chip  { padding: 0.45em 0.8em; }
 
 /* ---------- Coordination matrix ---------- */
 .qe-matrix {
@@ -324,6 +381,7 @@ $code-block-font-size: 0.6em;
   font-weight: 700;
 }
 .phase h3 { margin: 0.45em 0 0.3em; font-size: 0.9em; color: $qe-navy; }
+.phase p { font-size: 0.62em; color: $qe-body; line-height: 1.36; margin: 0.05em 0 0.32em; }
 .phase ul { margin: 0.1em 0 0 0.95em; padding: 0; }
 .phase li { font-size: 0.62em; line-height: 1.36; margin: 0.24em 0; }
 
@@ -334,6 +392,7 @@ $code-block-font-size: 0.6em;
   gap: 0.6em;
   margin-top: 0.4em;
 }
+.roles.two { grid-template-columns: 1fr 1fr; }
 .role {
   border-top: 4px solid $qe-blue;
   background: $qe-bg-soft;
@@ -405,6 +464,8 @@ $code-block-font-size: 0.6em;
   color: $qe-navy;
   font-style: italic;
 }
+// Centered variant — drop the left accent bar so the line sits truly centered.
+.pull.center { border-left: none; padding: 0.1em 0; }
 // Content slides marked {.spread}: open up the vertical rhythm so the
 // content breathes into the full slide height instead of bunching as a
 // short centered block. Scoped per block type to keep dense slides safe.

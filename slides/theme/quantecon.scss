@@ -510,10 +510,7 @@ $code-block-font-size: 0.6em;
    inside a sub-grid that mirrors the ladder's tracks, so they stay aligned to the
    cells under any reflow/rescale — no absolute-positioned connector lines. */
 
-// Pull the block up under the h2: the kicker restates the heading, so the theme's
-// generous h2 bottom margin is wasteful here. Static offset, reflow-safe.
-.bl-ladder-wrap { margin-top: -0.3em; }
-.bl-ladder-wrap > .kicker { margin-bottom: 0.12em; }
+.bl-ladder-wrap { margin-top: 0; }
 
 .bl-ladder {
   display: grid;

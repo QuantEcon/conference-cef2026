@@ -75,6 +75,40 @@ learned. We have plurality, but no one can actually *see* it or compare across
 it.
 :::
 
+## A Community Reference Library {.spread}
+
+<p class="lead">A single, community-owned library documenting the field's canonical models — **the same model in every toolkit**, side by side, open and runnable.</p>
+
+```{=html}
+<div class="cards three">
+  <div class="card blue">
+    <h3>Community-owned</h3>
+    <p>Authored &amp; maintained by the projects themselves &mdash; each keeps credit and editorial control.</p>
+  </div>
+  <div class="card teal">
+    <h3>Cross-toolkit</h3>
+    <p>The same canonical models across MATLAB, Python &amp; Julia &mdash; finally comparable, side by side.</p>
+  </div>
+  <div class="card amber">
+    <h3>Open &amp; executable</h3>
+    <p>Every model runs &mdash; open-source and reproducible, published on Jupyter Book.</p>
+  </div>
+</div>
+```
+
+<p class="pull center">The shared library — and the on-ramp — the field has been missing.</p>
+
+::: {.notes}
+So here's the answer to that fragmentation: one community-owned reference library
+that documents the field's canonical models — the same model implemented in every
+toolkit, side by side, open and runnable. Three things define it. It's
+community-owned — authored and maintained by the projects themselves, who keep
+credit and editorial control. It's cross-toolkit — the same canonical models
+across MATLAB, Python and Julia, finally comparable in one place. And it's open
+and executable — every model runs, published on Jupyter Book. It's the shared
+library, and the on-ramp, the field has been missing. Now, how it's built.
+:::
+
 ## The proposal — same model, multiple tools {.spread}
 
 Each project authors its own work and contributes **two things**:
@@ -105,7 +139,7 @@ Each project authors its own work and contributes **two things**:
   <tr>
     <td class="cls">Representative-agent / DSGE</td>
     <td class="base">RBC &middot; 3-eq NK (RANK)</td>
-    <td class="tools"><span class="chip mat">Dynare</span><span class="chip py">Dolo</span><span class="chip py">SSJ</span><span class="chip mat">GDSGE</span><span class="chip py">G-Cubed</span></td>
+    <td class="tools"><span class="chip mat">Dynare</span><span class="chip py">Dolo</span><span class="chip py">SSJ</span><span class="chip mat">GDSGE</span><span class="chip py">G-Cubed</span><span class="chip jl">Dynare.jl</span></td>
   </tr>
   <tr>
     <td class="cls">Agent-based</td>
@@ -131,29 +165,28 @@ toolkit shines. Exact coverage is for the working group to set; this is the
 shape of it.
 :::
 
-## Three families, two rungs {.spread}
+## What a "shared baseline" means {.spread}
 
 ```{=html}
 <div class="bl-ladder-wrap">
-  <p class="kicker">What a &ldquo;shared baseline&rdquo; means, concretely &mdash; intro &amp; advanced per family</p>
   <div class="bl-ladder">
     <div class="bl-fam-head fam-dsge"><span class="fk">Representative agent</span>DSGE</div>
     <div class="bl-fam-head fam-het"><span class="fk">Heterogeneous agent</span>Incomplete markets</div>
     <div class="bl-fam-head fam-abm"><span class="fk">Agent-based</span>Bottom-up macro</div>
-
-    <div class="bl-rung adv fam-dsge"><span class="rk">Advanced</span><h4>3-equation New Keynesian</h4><p>RANK &mdash; representative-agent closure</p><span class="tag">+ 25bp monetary shock</span></div>
-    <div class="bl-rung adv fam-het"><span class="rk">Advanced</span><h4>1-asset HANK</h4><p>Heterogeneous-agent New Keynesian</p><span class="tag">+ 25bp monetary shock</span></div>
-    <div class="bl-rung adv fam-abm"><span class="rk">Advanced</span><h4>Lengnick (2013)</h4><p>Baseline macro&ndash;ABM</p></div>
-
-    <div class="bl-thread shock"><div class="seg"><span class="t-k">Same 25bp shock &rarr;</span><span class="cap">overlay the two IRFs &mdash; the signature <strong>RANK vs HANK</strong> comparison of the last decade</span></div></div>
 
     <div class="bl-rung intro fam-dsge"><span class="rk">Introductory</span><h4>RBC growth</h4><p>Real business cycle &mdash; the DSGE starting point</p></div>
     <div class="bl-rung intro fam-het"><span class="rk">Introductory</span><h4>Aiyagari</h4><p>General equilibrium &mdash; wealth as an <em>equilibrium</em> object</p></div>
     <div class="bl-rung intro fam-abm"><span class="rk">Introductory</span><h4>Boltzmann&ndash;Gibbs exchange</h4><p>Wealth as an <em>emergent</em> distribution &rarr; Gini</p></div>
 
     <div class="bl-thread wealth"><div class="seg"><span class="t-k">Same wealth distribution &rarr;</span><span class="cap">equilibrium vs emergent &mdash; one question, two mechanisms; for the ABM the <strong>divergence is the finding</strong></span></div></div>
+
+    <div class="bl-rung adv fam-dsge"><span class="rk">Advanced</span><h4>3-equation New Keynesian</h4><p>RANK &mdash; representative-agent closure</p><span class="tag">+ 25bp monetary shock</span></div>
+    <div class="bl-rung adv fam-het"><span class="rk">Advanced</span><h4>1-asset HANK</h4><p>Heterogeneous-agent New Keynesian</p><span class="tag">+ 25bp monetary shock</span></div>
+    <div class="bl-rung adv fam-abm"><span class="rk">Advanced</span><h4>Lengnick (2013)</h4><p>Baseline macro&ndash;ABM</p></div>
+
+    <div class="bl-thread shock"><div class="seg"><span class="t-k">Same 25bp shock &rarr;</span><span class="cap">overlay the two IRFs &mdash; the signature <strong>RANK vs HANK</strong> comparison of the last decade</span></div></div>
   </div>
-  <p class="bl-calib">Comparable only against a <strong>pinned calibration sheet</strong> &mdash; same income process &amp; discretisation (<code>Rouwenhorst, N=7</code>), same grids, same shock &mdash; because diverging discretisation is the silent reason &ldquo;the same model&rdquo; disagrees across toolkits.</p>
+  <p class="bl-calib">Comparable only against a <strong>pinned calibration sheet</strong> &mdash; same income process &amp; discretisation (<code>Rouwenhorst, N=7</code>), same grids, same shock.</p>
 </div>
 ```
 

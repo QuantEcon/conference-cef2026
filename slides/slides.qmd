@@ -149,7 +149,7 @@ Each project authors its own work and contributes **two things**:
 </tbody>
 </table>
 
-<p class="small muted">GDSGE is partial for the DSGE family &mdash; its strength is the global / ZLB case, which becomes its hero tutorial. AGENTBLOCKS contributes reusable components, not a runnable model.</p>
+<p class="small muted">GDSGE is partial for the DSGE family &mdash; its strength is the global / ZLB case, which becomes its hero tutorial. AGENTBLOCKS contributes reusable components, not a runnable model. Agent-based baseline: <strong>Lengnick (2013)</strong> is an explicit, minimal macro-ABM (with independent cross-toolkit replications); <strong>Caiani et&nbsp;al. (2016)</strong> AB-SFC is the heavier alternative.</p>
 
 ::: {.notes}
 Here's the proposal, made concrete. A community-owned library — same model,

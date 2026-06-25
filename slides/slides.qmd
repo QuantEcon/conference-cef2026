@@ -94,41 +94,85 @@ Each project authors its own work and contributes **two things**:
 
 <table class="qe-matrix">
 <thead>
-  <tr><th>Problem class</th><th>Shared baseline</th><th>Toolkits coordinated around it</th></tr>
+  <tr><th>Family</th><th>Shared baselines</th><th>Toolkits coordinated around them</th></tr>
 </thead>
 <tbody>
   <tr>
-    <td class="cls">Heterogeneous agents</td>
-    <td class="base">Aiyagari · Krusell–Smith</td>
-    <td class="tools"><span class="chip mat">VFI Toolkit</span><span class="chip py">HARK</span><span class="chip py">Dolo</span><span class="chip py">GEModelTools</span><span class="chip py">SSJ</span></td>
+    <td class="cls">Heterogeneous-agent</td>
+    <td class="base">Aiyagari &middot; 1-asset HANK</td>
+    <td class="tools"><span class="chip mat">VFI Toolkit</span><span class="chip py">HARK</span><span class="chip py">Dolo</span><span class="chip py">GEModelTools</span><span class="chip py">SSJ</span><span class="chip mat">GDSGE</span><span class="chip jl">BASEforHANK</span><span class="chip mat">Dynare</span></td>
   </tr>
   <tr>
-    <td class="cls">HANK</td>
-    <td class="base">Two-asset HANK</td>
-    <td class="tools"><span class="chip py">GEModelTools</span><span class="chip py">sequence-jacobian</span><span class="chip jl">BASEforHANK</span></td>
+    <td class="cls">Representative-agent / DSGE</td>
+    <td class="base">RBC &middot; 3-eq NK (RANK)</td>
+    <td class="tools"><span class="chip mat">Dynare</span><span class="chip py">Dolo</span><span class="chip py">SSJ</span><span class="chip mat">GDSGE</span><span class="chip py">G-Cubed</span></td>
   </tr>
   <tr>
-    <td class="cls">DSGE</td>
-    <td class="base">Small NK DSGE</td>
-    <td class="tools"><span class="chip mat">Dynare</span><span class="chip py">Dolo</span><span class="chip mat">GDSGE</span></td>
-  </tr>
-  <tr>
-    <td class="cls">Agent-based macro</td>
-    <td class="base">Baseline ABM</td>
+    <td class="cls">Agent-based</td>
+    <td class="base">Wealth exchange &middot; Lengnick ABM</td>
     <td class="tools"><span class="chip py">Mesa</span><span class="chip cpp">Eurace / FLAME</span><span class="chip">AGENTBLOCKS</span></td>
   </tr>
 </tbody>
 </table>
 
+<p class="small muted">GDSGE is partial for the DSGE family &mdash; its strength is the global / ZLB case, which becomes its hero tutorial. AGENTBLOCKS contributes reusable components, not a runnable model.</p>
+
 ::: {.notes}
 Here's the proposal, made concrete. A community-owned library — same model,
 multiple tools, side by side. Crucially, each project authors and maintains its
-own implementations. Four problem classes where several toolkits genuinely
-overlap; for each, one shared baseline model. We coordinate the projects in that
-row so a reader can open Aiyagari in VFI Toolkit next to Aiyagari in HARK next
-to Aiyagari in sequence-jacobian — same notation, results that line up. And each
-project also contributes an author's-choice showcase for what it's built for.
-Exact coverage is for the working group to set; this is the shape of it.
+own implementations. Three families where several toolkits genuinely overlap;
+for each, two shared baselines — an introductory rung and an advanced rung — so
+a group can grow from the simple case into the hard one. We coordinate the
+projects in that row so a reader can open Aiyagari in VFI Toolkit next to
+Aiyagari in HARK next to Aiyagari in SSJ — same notation, results that line up —
+and then step up to the 1-asset HANK baseline the same way. And each project
+also contributes an author's-choice hero showcase for the problem where its
+toolkit shines. Exact coverage is for the working group to set; this is the
+shape of it.
+:::
+
+## Three families, two rungs {.spread}
+
+```{=html}
+<div class="bl-ladder-wrap">
+  <p class="kicker">What a &ldquo;shared baseline&rdquo; means, concretely &mdash; intro &amp; advanced per family</p>
+  <div class="bl-ladder">
+    <div class="bl-fam-head fam-dsge"><span class="fk">Representative agent</span>DSGE</div>
+    <div class="bl-fam-head fam-het"><span class="fk">Heterogeneous agent</span>Incomplete markets</div>
+    <div class="bl-fam-head fam-abm"><span class="fk">Agent-based</span>Bottom-up macro</div>
+
+    <div class="bl-rung adv fam-dsge"><span class="rk">Advanced</span><h4>3-equation New Keynesian</h4><p>RANK &mdash; representative-agent closure</p><span class="tag">+ 25bp monetary shock</span></div>
+    <div class="bl-rung adv fam-het"><span class="rk">Advanced</span><h4>1-asset HANK</h4><p>Heterogeneous-agent New Keynesian</p><span class="tag">+ 25bp monetary shock</span></div>
+    <div class="bl-rung adv fam-abm"><span class="rk">Advanced</span><h4>Lengnick (2013)</h4><p>Baseline macro&ndash;ABM</p></div>
+
+    <div class="bl-thread shock"><div class="seg"><span class="t-k">Same 25bp shock &rarr;</span><span class="cap">overlay the two IRFs &mdash; the signature <strong>RANK vs HANK</strong> comparison of the last decade</span></div></div>
+
+    <div class="bl-rung intro fam-dsge"><span class="rk">Introductory</span><h4>RBC growth</h4><p>Real business cycle &mdash; the DSGE starting point</p></div>
+    <div class="bl-rung intro fam-het"><span class="rk">Introductory</span><h4>Aiyagari</h4><p>General equilibrium &mdash; wealth as an <em>equilibrium</em> object</p></div>
+    <div class="bl-rung intro fam-abm"><span class="rk">Introductory</span><h4>Boltzmann&ndash;Gibbs exchange</h4><p>Wealth as an <em>emergent</em> distribution &rarr; Gini</p></div>
+
+    <div class="bl-thread wealth"><div class="seg"><span class="t-k">Same wealth distribution &rarr;</span><span class="cap">equilibrium vs emergent &mdash; one question, two mechanisms; for the ABM the <strong>divergence is the finding</strong></span></div></div>
+  </div>
+  <p class="bl-calib">Comparable only against a <strong>pinned calibration sheet</strong> &mdash; same income process &amp; discretisation (<code>Rouwenhorst, N=7</code>), same grids, same shock &mdash; because diverging discretisation is the silent reason &ldquo;the same model&rdquo; disagrees across toolkits.</p>
+</div>
+```
+
+::: {.notes}
+This is what "shared baseline" means in practice. Three families across the
+columns, two rungs down each — an introductory model and an advanced one — so a
+group can start simple and grow into the hard case. Representative-agent: RBC up
+to a three-equation New Keynesian (RANK). Heterogeneous-agent: Aiyagari up to
+one-asset HANK. Agent-based: a Boltzmann–Gibbs wealth-exchange model up to
+Lengnick's baseline macro-ABM. The two coloured bands are the punchline. First:
+the same 25-basis-point monetary shock runs in both advanced rungs — RANK and
+HANK — so overlaying the two impulse responses gives the signature
+RANK-versus-HANK comparison of the last decade. Second: the wealth distribution
+links the two introductory rungs — in Aiyagari it's an equilibrium object, in
+the agent-based model it's emergent — same question, two mechanisms, and for the
+ABM the divergence is the finding. And none of it is comparable unless the
+calibration is pinned: the same income process and discretisation — Rouwenhorst,
+seven states — the same grids, the same shock. Diverging discretisation is the
+silent reason "the same model" disagrees across toolkits.
 :::
 
 ## What the proposal aims for {.spread}

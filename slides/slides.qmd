@@ -176,9 +176,9 @@ shape of it.
 
     <div class="bl-rung intro fam-dsge"><span class="rk">Introductory</span><h4>RBC growth</h4><p>Real business cycle &mdash; the DSGE starting point</p></div>
     <div class="bl-rung intro fam-het"><span class="rk">Introductory</span><h4>Aiyagari</h4><p>General equilibrium &mdash; wealth as an <em>equilibrium</em> object</p></div>
-    <div class="bl-rung intro fam-abm"><span class="rk">Introductory</span><h4>Boltzmann&ndash;Gibbs exchange</h4><p>Wealth as an <em>emergent</em> distribution &rarr; Gini</p></div>
+    <div class="bl-rung intro fam-abm"><span class="rk">Introductory</span><h4>Boltzmann&ndash;Gibbs exchange</h4><p>An <em>emergent</em> distribution &rarr; Gini</p></div>
 
-    <div class="bl-thread wealth"><div class="seg"><span class="t-k">Same wealth distribution &rarr;</span><span class="cap">equilibrium vs emergent &mdash; one question, two mechanisms; for the ABM the <strong>divergence is the finding</strong></span></div></div>
+    <div class="bl-thread wealth"><div class="seg"><span class="t-k">Same wealth distribution &rarr;</span><span class="cap">equilibrium vs emergent &mdash; one question, two mechanisms</span></div></div>
 
     <div class="bl-rung adv fam-dsge"><span class="rk">Advanced</span><h4>3-equation New Keynesian</h4><p>RANK &mdash; representative-agent closure</p><span class="tag">+ 25bp monetary shock</span></div>
     <div class="bl-rung adv fam-het"><span class="rk">Advanced</span><h4>1-asset HANK</h4><p>Heterogeneous-agent New Keynesian</p><span class="tag">+ 25bp monetary shock</span></div>

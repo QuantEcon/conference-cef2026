@@ -24,54 +24,7 @@ format:
       data-background-color: "#07365c"
 ---
 
-## Who is QuantEcon?
-
-A non-profit building **open-source tools for computational economics** — used across research, central banks, and universities worldwide.
-
-```{=html}
-<div class="statband">
-  <div class="stat"><span class="num">~31k</span><span class="lbl">monthly users</span></div>
-  <div class="stat"><span class="num">172</span><span class="lbl">countries</span></div>
-  <div class="stat"><span class="num">8</span><span class="lbl">lecture series</span></div>
-  <div class="stat"><span class="num">30+</span><span class="lbl">workshops delivered</span></div>
-</div>
-```
-
-```{=html}
-<div class="cards">
-  <div class="card blue">
-    <h3>Lectures</h3>
-    <p>Open-source curriculum from intro to advanced &mdash; Python, Julia &amp; JAX. Free to read, run, and adapt.</p>
-  </div>
-  <div class="card teal">
-    <h3>Books</h3>
-    <p>Peer-reviewed textbooks &mdash; <em>Dynamic Programming</em>, <em>Economic Networks</em>, <em>Quantitative Macro&nbsp;Finance</em>.</p>
-  </div>
-  <div class="card amber">
-    <h3>Infrastructure</h3>
-    <p>The executable-book stack &mdash; MyST &amp; JupyterBook 2, plus the QuantEcon.py / .jl libraries. Founding member of the Executable Books Project.</p>
-  </div>
-  <div class="card coral">
-    <h3>Training</h3>
-    <p>Short courses delivered at the IMF, central banks, and universities worldwide.</p>
-  </div>
-</div>
-```
-
-<p class="small muted center">Reach: quantecon.org analytics dashboard &mdash; monthly active users averaged over Dec 2025&ndash;May 2026, across 172 countries.</p>
-
-::: {.notes}
-Before the proposal, a word on who's making it. QuantEcon is a non-profit building
-open-source tools for computational economics. Four pillars: our lecture series —
-read by around thirty-one thousand people a month across a hundred and seventy-two
-countries; our peer-reviewed textbooks; the executable-book infrastructure we build
-and maintain, as a founding member of the Executable Books Project; and the training
-we deliver at the IMF, central banks, and universities. Those reach numbers come
-straight from our public analytics dashboard. The point: we already serve this whole
-community at scale — which is exactly why we can host a shared reference library for it.
-:::
-
-## A dozen serious toolkits — no way to compare them {.spread}
+## A dozen serious toolkits — no way to find them {.spread}
 
 The field has more than a dozen mature open-source toolkits, across **MATLAB, Python, and Julia**:
 
@@ -92,7 +45,7 @@ The field has more than a dozen mature open-source toolkits, across **MATLAB, Py
 
 Each has genuinely distinct strengths. But researchers have **no way to compare them**, **no shared library of canonical models**, and **no on-ramp to the ecosystem as a whole**.
 
-<p class="pull">Real diversity in how we solve models — and no way to see across it.</p>
+<p class="pull center">Real diversity in how we solve models — and no way to see across it.</p>
 
 ::: {.notes}
 Good afternoon — I'm Matt McKay from QuantEcon. In the next ten minutes I want to
@@ -165,56 +118,76 @@ Exact coverage is for the working group to set; this is the shape of it.
 ## What the proposal aims for {.spread}
 
 ```{=html}
-<div class="cards three">
-  <div class="card blue">
+<div class="aims">
+  <div class="card blue primary">
     <h3>A community asset</h3>
-    <p>The field's first cross-toolkit reference — a welcoming on-ramp for new users, a showcase for project authors.</p>
+    <p>The field's first cross-toolkit reference — <strong>built by and for the community</strong>. A single entry point that lowers the search cost of a fragmented field, lets researchers compare toolkits side by side, and showcases each project through its hero tutorial — all on <strong>Jupyter Book</strong>, a modern code-first publishing platform.</p>
   </div>
-  <div class="card coral">
-    <h3>Substrate for AI assistance</h3>
-    <p>Exactly the corpus an AI research assistant needs:</p>
-    <div class="chips">
-      <span class="chip query">"Which tool fits my incomplete-markets model?"</span>
-      <span class="chip query">"Translate my Dynare model to sequence-jacobian."</span>
+
+  <p class="aim-label">Building towards</p>
+  <div class="cards">
+    <div class="card coral">
+      <h3>Substrate for AI assistance</h3>
+      <p>Exactly the corpus an AI research assistant needs:</p>
+      <div class="chips">
+        <span class="chip query">"Which tool fits my incomplete-markets model?"</span>
+        <span class="chip query">"Translate my Dynare model to sequence-jacobian."</span>
+      </div>
     </div>
-  </div>
-  <div class="card teal">
-    <h3>A proving ground for standards</h3>
-    <p>As shared schemas emerge — steady states, IRFs, Jacobians — the library demonstrates them in working code, and becomes the testbed for <strong>Econ-ARK</strong>'s semantic model representation.</p>
+    <div class="card teal">
+      <h3>A proving ground for standards</h3>
+      <p>As shared schemas emerge — steady states, IRFs, Jacobians — the library demonstrates them in working code, and becomes the testbed for <strong>Econ-ARK's Project Bellman</strong> semantic representation.</p>
+    </div>
   </div>
 </div>
 ```
 
 ::: {.notes}
-Three aims. One: it's a community asset — the field's first shared cross-toolkit
-reference, a welcoming on-ramp for new users and a showcase for project authors.
-Two — the part I'm most excited about — it's the substrate for AI assistance. An
-assistant for this field is only as good as the corpus behind it, and right now
-that corpus doesn't exist in structured, cross-toolkit form. This library *is*
-that corpus: it lets an assistant answer "which tool fits my incomplete-markets
-model?" or "translate my Dynare model to sequence-jacobian" with grounded
-examples — and it's exactly what Econ-ARK's semantic-representation work needs to
-validate against. Three: it's a proving ground for the standards this working
-group will define, demonstrated in working code, not just specified on paper.
-QuantEcon brings the engineering capacity to build the glue — which I'll come to.
+One priority, and two things it builds toward. The priority — first and
+foremost — is a community asset: the field's first cross-toolkit reference,
+built by and for the community. It's a single entry point that lowers the search
+cost of a fragmented field — a dozen toolkits with no way to compare them; it
+lets researchers put toolkits side by side on the same models; and it gives each
+project a showcase through its hero tutorial. And it's all published on Jupyter
+Book, the modern code-first platform we already run at scale. That's the
+foundation, and it delivers value on its own. From that foundation, two things
+follow. One — the part I'm most excited about — it becomes
+the substrate for AI assistance. An assistant for this field is only as good as
+the corpus behind it, and right now that corpus doesn't exist in structured,
+cross-toolkit form. This library *is* that corpus: it lets an assistant answer
+"which tool fits my incomplete-markets model?" or "translate my Dynare model to
+sequence-jacobian" with grounded examples — and it's exactly what Econ-ARK's
+semantic-representation work needs to validate against. And two, it becomes a
+proving ground for the standards this working group will define, demonstrated in
+working code, not just specified on paper. But the foundation comes first — the
+library itself. QuantEcon brings the engineering capacity to build the glue —
+which I'll come to.
 :::
 
-## QuantEcon Infrastructure {.spread}
+## QuantEcon Infrastructure
 
-**A community partner for the whole field** — already running open-source **executable-book** infrastructure at scale. Some ideas we can bring to the working group:
+**A community partner** — already running open-source **executable book** infrastructure:
+
+```{=html}
+<div class="statband compact">
+  <div class="stat"><span class="num">~31k</span><span class="lbl">monthly users</span></div>
+  <div class="stat"><span class="num">172</span><span class="lbl">countries</span></div>
+  <div class="stat"><span class="num">274</span><span class="lbl">lectures</span></div>
+</div>
+```
 
 ```{=html}
 <div class="cards">
   <div class="card blue">
     <h3>Executable Jupyter Books</h3>
-    <p>MyST / JupyterBook 2 — the stack behind QuantEcon's lecture sites, with a book theme we maintain.</p>
+    <p><strong>Code-first publishing</strong> — prose, maths, and runnable code in one source that executes and renders straight to a website. MyST / JupyterBook 2, the stack behind our lecture sites, with a book theme we maintain.</p>
   </div>
   <div class="card teal">
     <h3>Multi-language execution &amp; CI</h3>
     <p>Python &amp; Julia in Jupyter — with or without GPU instances for compute-intensive workflows. Interactive tutorials via Binder or Colab.</p>
   </div>
   <div class="card amber">
-    <h3>A real path for MATLAB</h3>
+    <h3>MATLAB support</h3>
     <p>Run locally via the MATLAB kernel for Jupyter — MATLAB needs a licence, so we publish pre-rendered output. Home for Dynare, VFI Toolkit, GDSGE.</p>
   </div>
   <div class="card coral">
@@ -242,65 +215,61 @@ stack the library needs, and we already operate it.
 ```{=html}
 <div class="phases">
   <div class="phase one">
-    <span class="ph-tag">Phase 1</span><span class="when">6&ndash;12 months</span>
+    <span class="ph-tag">Phase 1</span><span class="when">end of 2026</span>
     <h3>Community library</h3>
+    <p>A static <strong>Jupyter Book</strong> site publishing tutorials on:</p>
     <ul>
-      <li>3&ndash;4 canonical models in 2&ndash;3 toolkits each, on a static JupyterBook site</li>
-      <li>Open-source repo, PRs welcome &middot; per-project tutorials &middot; per-model metadata</li>
-      <li>CI runs every model and flags breakage</li>
-      <li>AI advisor MVP built on the corpus</li>
+      <li><strong>2 &times; baseline models</strong> &mdash; for cross-comparison of toolkits</li>
+      <li><strong>1 &times; hero tutorial</strong> &mdash; per package / toolkit</li>
+      <li>CI runs to check execution and report execution issues</li>
     </ul>
   </div>
   <div class="phase two">
-    <span class="ph-tag">Phase 2</span><span class="when">12&ndash;24 months</span>
+    <span class="ph-tag">Phase 2</span><span class="when">2027+</span>
     <h3>Reference standard</h3>
     <ul>
-      <li>Shared output schemas &middot; queryable index</li>
-      <li>Cross-toolkit validation &mdash; where do the same model's outputs diverge?</li>
-      <li>Library models in a shared <em>semantic</em> representation, building on Econ-ARK's DP schema</li>
+      <li>A library to test <strong>shared schemas</strong></li>
+      <li>Cross-toolkit validation checks</li>
+      <li>Semantic examples from Econ-ARK <strong>Project Bellman</strong> &mdash; semantics &amp; schema</li>
     </ul>
   </div>
 </div>
 ```
 
 ::: {.notes}
-Two phases. Phase one, six to twelve months, is the community library itself — a
-handful of models, a few toolkits each, a static executable book, open repo, CI
-that flags breakage, and a first AI-advisor MVP. Phase two, twelve to
-twenty-four months, turns it into a reference standard: shared output schemas,
-cross-toolkit validation reports, and library models expressed in a shared
-semantic representation built on Econ-ARK's work. Phase one delivers value on
-its own; phase two is where the standards harden.
+Two phases. Phase one, through the end of 2026, is the community library itself — a
+static Jupyter Book site publishing tutorials: two baseline models per group for
+cross-toolkit comparison, one hero tutorial per package, and CI that runs every
+model to check execution and report issues. Phase two, from 2027 onward,
+turns it into a reference standard: a library that tests shared schemas,
+cross-toolkit validation checks, and semantic examples from Econ-ARK's Project
+Bellman — its semantics and schema work. Phase one delivers value on its own;
+phase two is where the standards harden.
 :::
 
 ## The ask — and who does what {.spread}
 
-<p class="kicker">Register to participate today — plus, by the end of 2026:</p>
+<p class="kicker">Register to participate today — plus, for Phase 1 (by end of 2026):</p>
 
-- A **shared baseline model** (we coordinate it across your group) and a **hero tutorial** — your author's choice, the problem where your toolkit shines
+- **Shared baseline models** — introductory and advanced, coordinated across your group — and a **hero tutorial**, your author's choice: the problem where your toolkit shines
 - **Authored and maintained by your project** — you keep credit, editorial control, and the right to update or withdraw
 
 ```{=html}
-<div class="roles">
+<div class="roles two">
   <div class="role p">
     <h3>Projects</h3>
     <ul>
-      <li>Author &amp; own their content</li>
+      <li>Author &amp; own <strong>MyST</strong> content <span class="muted">(Markdown or another format if preferred)</span></li>
       <li>Keep credit &amp; editorial control</li>
+      <li>Collaborate via GitHub</li>
     </ul>
   </div>
   <div class="role q">
     <h3>QuantEcon</h3>
     <ul>
       <li>Hosts, publishes &amp; builds the glue</li>
+      <li>Develops supporting infrastructure (e.g. MATLAB)</li>
       <li>A shared home that champions every project</li>
-    </ul>
-  </div>
-  <div class="role e">
-    <h3>Schema project</h3>
-    <ul>
-      <li>Econ-ARK anchors the semantic-representation track</li>
-      <li>Library models become its validation corpus</li>
     </ul>
   </div>
 </div>
@@ -310,12 +279,13 @@ its own; phase two is where the standards harden.
 
 ::: {.notes}
 So here's the concrete ask. First, register to participate — today. Then, by the
-end of 2026, two things from each project: one shared baseline model we
-coordinate across your group, and one author's-choice showcase for what your
-tool does best — both authored and maintained by you. And to be clear about the
-division of labour: you own your content and keep editorial control; QuantEcon
-is the shared home that publishes everyone's work and builds the glue; and
-Econ-ARK anchors a distinct semantic-representation track. This is a
+end of 2026, two things from each project: shared baseline models — introductory
+and advanced — that we coordinate across your group, and one author's-choice hero
+tutorial for what your tool does best, both authored and maintained by you. And
+to be clear about the division of labour: you author in MyST and collaborate
+through GitHub, owning your content and keeping editorial control; QuantEcon is
+the shared home that hosts, publishes, builds the glue, and develops the
+supporting infrastructure — including the MATLAB path. This is a
 high-visibility, high-impact ask.
 :::
 
@@ -324,7 +294,7 @@ high-visibility, high-impact ask.
 <p class="lead">The field's first cross-toolkit reference — built by the community that owns these tools.</p>
 
 - [**Register to participate**](https://github.com/QuantEcon/conference-cef2026/issues/new/choose) — today
-- **A shared baseline + a showcase** from your toolkit — by end of 2026
+- **Shared baselines + a showcase** from your toolkit — by end of 2026
 
 <p style="margin-top:1em">[**Register your project →**](https://github.com/QuantEcon/conference-cef2026/issues/new/choose) github.com/QuantEcon/conference-cef2026 · Let's talk after the session.</p>
 
@@ -335,4 +305,59 @@ things from me today: register to participate, and a shared baseline plus a
 showcase from your toolkit by the end of the year. Registration is open now at
 github.com/QuantEcon/conference-cef2026. I'd love to talk specifics with any of
 you after the session. Thank you.
+:::
+
+## Support slides {background-color="#07365c" .dark-slide .center}
+
+<p class="lead center">Reference material — for questions and discussion.</p>
+
+::: {.notes}
+Backup from here. I'll jump to these if a question calls for it.
+:::
+
+## Who is QuantEcon?
+
+A non-profit building **open-source tools for computational economics** — used across research, central banks, and universities worldwide.
+
+```{=html}
+<div class="statband">
+  <div class="stat"><span class="num">~31k</span><span class="lbl">monthly users</span></div>
+  <div class="stat"><span class="num">172</span><span class="lbl">countries</span></div>
+  <div class="stat"><span class="num">8</span><span class="lbl">lecture series</span></div>
+  <div class="stat"><span class="num">30+</span><span class="lbl">workshops delivered</span></div>
+</div>
+```
+
+```{=html}
+<div class="cards">
+  <div class="card blue">
+    <h3>Lectures</h3>
+    <p>Open-source curriculum from intro to advanced &mdash; Python, Julia &amp; JAX. Free to read, run, and adapt.</p>
+  </div>
+  <div class="card teal">
+    <h3>Books</h3>
+    <p>Peer-reviewed textbooks &mdash; <em>Dynamic Programming</em>, <em>Economic Networks</em>, <em>Quantitative Macro&nbsp;Finance</em>.</p>
+  </div>
+  <div class="card amber highlight">
+    <h3>Infrastructure</h3>
+    <p>The executable-book stack &mdash; MyST &amp; JupyterBook 2, plus the QuantEcon.py / .jl libraries. Founding member of the Executable Books Project.</p>
+  </div>
+  <div class="card coral">
+    <h3>Training</h3>
+    <p>Short courses delivered at the IMF, central banks, and universities worldwide.</p>
+  </div>
+</div>
+```
+
+<p class="small muted center">Reach: quantecon.org analytics dashboard &mdash; monthly active users averaged over Dec 2025&ndash;May 2026, across 172 countries.</p>
+
+::: {.notes}
+A backup on who's making this, if it comes up. QuantEcon is a non-profit building
+open-source tools for computational economics. Four pillars: our lecture series —
+read by around thirty-one thousand people a month across a hundred and seventy-two
+countries; our peer-reviewed textbooks; the executable-book infrastructure we build
+and maintain, as a founding member of the Executable Books Project; and the training
+we deliver at the IMF, central banks, and universities. Those reach numbers come
+straight from our public analytics dashboard. The point: we already serve this whole
+community at scale — which is exactly why we can host a shared reference library for it.
 :::

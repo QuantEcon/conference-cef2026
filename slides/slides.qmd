@@ -26,7 +26,7 @@ format:
 
 ## A dozen serious toolkits — no way to find them {.spread}
 
-The field has a dozen mature open-source toolkits, across **MATLAB, Python, and Julia**:
+The field has a dozen mature toolkits, across **MATLAB, Python, and Julia**:
 
 <div class="chips">
   <span class="chip mat">Dynare <span class="lang">MATLAB</span></span>

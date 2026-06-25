@@ -587,10 +587,12 @@ $code-block-font-size: 0.6em;
   padding: 0.16em 0.46em;
 }
 
-/* family accent on the rung's left edge (matches the .card left-rule idiom) */
-.fam-dsge .bl-rung { border-left-color: $qe-amber; }
-.fam-het  .bl-rung { border-left-color: $qe-blue; }
-.fam-abm  .bl-rung { border-left-color: $qe-green; }
+/* family accent on the rung's left edge (matches the .card left-rule idiom).
+   fam-* is a co-class on each .bl-rung, so these must be compound selectors,
+   not descendant selectors. */
+.bl-rung.fam-dsge { border-left-color: $qe-amber; }
+.bl-rung.fam-het  { border-left-color: $qe-blue; }
+.bl-rung.fam-abm  { border-left-color: $qe-green; }
 
 /* ---- through-bands: thread connectors that span 2 of 3 columns (pure grid) ---- */
 .bl-thread {

@@ -100,7 +100,7 @@ Each project authors its own work and contributes **two things**:
   <tr>
     <td class="cls">Heterogeneous-agent</td>
     <td class="base">Aiyagari &middot; 1-asset HANK</td>
-    <td class="tools"><span class="chip mat">VFI Toolkit</span><span class="chip py">HARK</span><span class="chip py">Dolo</span><span class="chip py">GEModelTools</span><span class="chip py">SSJ</span><span class="chip mat">GDSGE</span><span class="chip jl">BASEforHANK</span><span class="chip mat">Dynare</span></td>
+    <td class="tools"><span class="chip mat">VFI Toolkit</span><span class="chip py">HARK</span><span class="chip py">Dolo</span><span class="chip py">GEModelTools</span><span class="chip py">SSJ</span><span class="chip mat">GDSGE</span><span class="chip jl">BASEforHANK</span><span class="chip mat">Dynare v7</span></td>
   </tr>
   <tr>
     <td class="cls">Representative-agent / DSGE</td>

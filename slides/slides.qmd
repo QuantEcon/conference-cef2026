@@ -87,7 +87,7 @@ it.
   </div>
   <div class="card teal">
     <h3>Cross-toolkit</h3>
-    <p>The same canonical models across MATLAB, Python &amp; Julia &mdash; finally comparable, side by side.</p>
+    <p>The same canonical models across MATLAB, Python &amp; Julia &mdash; comparable, side by side.</p>
   </div>
   <div class="card amber">
     <h3>Open &amp; executable</h3>
@@ -104,7 +104,7 @@ that documents the field's canonical models — the same model implemented in ev
 toolkit, side by side, open and runnable. Three things define it. It's
 community-owned — authored and maintained by the projects themselves, who keep
 credit and editorial control. It's cross-toolkit — the same canonical models
-across MATLAB, Python and Julia, finally comparable in one place. And it's open
+across MATLAB, Python and Julia, comparable in one place. And it's open
 and executable — every model runs, published on Jupyter Book. It's the shared
 library, and the on-ramp, the field has been missing. Now, how it's built.
 :::

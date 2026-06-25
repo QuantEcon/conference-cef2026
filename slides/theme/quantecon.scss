@@ -480,7 +480,9 @@ $code-block-font-size: 0.6em;
 .reveal section.spread .contribs  { margin: 1.2em 0 1.0em; }
 .reveal section.spread .cards     { margin-top: 1.15em; row-gap: 1.2em; }
 .reveal section.spread .qe-matrix { margin-top: 1.0em; }
-.reveal section.spread .qe-matrix td { padding-top: 0.78em; padding-bottom: 0.78em; }
+// Tighter rows on the proposal slide: the het-agent row now carries 8 chips
+// (wraps to two lines) plus a footnote, so reclaim vertical space to fit.
+.reveal section.spread .qe-matrix td { padding-top: 0.5em; padding-bottom: 0.5em; }
 .reveal section.spread .phases    { margin-top: 1.25em; }
 .reveal section.spread .roles     { margin-top: 1.15em; }
 
@@ -498,4 +500,271 @@ $code-block-font-size: 0.6em;
   left: 24px;
   font-size: 0.42em;
   color: $qe-muted;
+}
+
+/* ---------- Baseline ladder: three families x two rungs ---------- */
+/* Column order is DSGE | Heterogeneous-agent | Agent-based so het-agent is the
+   shared hinge: the 25bp-shock band naturally spans the two advanced cells on the
+   left (DSGE + het) and the wealth band spans the two introductory cells on the
+   right (het + ABM). Both threads are placed with CSS Grid (grid-column: N / span 2)
+   inside a sub-grid that mirrors the ladder's tracks, so they stay aligned to the
+   cells under any reflow/rescale — no absolute-positioned connector lines. */
+
+.bl-ladder-wrap { margin-top: 0; }
+
+.bl-ladder {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.22em 0.7em;
+  margin-top: 0.1em;
+}
+.bl-ladder .bl-fam-head {
+  text-align: center;
+  font-size: 0.6em;
+  font-weight: 700;
+  color: $qe-navy;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+.bl-ladder .bl-fam-head .fk {
+  display: block;
+  font-size: 0.66em;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $qe-muted;
+  margin-bottom: 0.15em;
+}
+
+/* a rung cell = one baseline model in one family */
+.bl-rung {
+  border: 1px solid $qe-border;
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 0.4em 0.7em 0.44em;
+  box-shadow: 0 1px 3px rgba(16, 42, 67, 0.05);
+  border-left: 5px solid $qe-border;
+}
+.bl-rung .rk {
+  display: inline-block;
+  font-size: 0.44em;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: $qe-muted;
+  border-radius: 999px;
+  padding: 0.22em 0.55em;
+  margin-bottom: 0.28em;
+}
+.bl-rung.adv   .rk { background: $qe-navy; }
+.bl-rung.intro .rk { background: $qe-blue; }
+.bl-rung h4 {
+  margin: 0 0 0.1em;
+  font-size: 0.64em;
+  font-weight: 700;
+  color: $qe-navy;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+}
+.bl-rung p {
+  margin: 0;
+  font-size: 0.5em;
+  line-height: 1.22;
+  color: $qe-muted;
+}
+.bl-rung .tag {
+  display: inline-block;
+  margin-top: 0.26em;
+  font-size: 0.48em;
+  font-weight: 700;
+  color: $qe-teal;
+  background: rgba(0, 95, 95, 0.09);
+  border-radius: 5px;
+  padding: 0.16em 0.46em;
+}
+
+/* family accent on the rung's left edge (matches the .card left-rule idiom).
+   fam-* is a co-class on each .bl-rung, so these must be compound selectors,
+   not descendant selectors. */
+.bl-rung.fam-dsge { border-left-color: $qe-amber; }
+.bl-rung.fam-het  { border-left-color: $qe-blue; }
+.bl-rung.fam-abm  { border-left-color: $qe-green; }
+
+/* ---- through-bands: thread connectors that span 2 of 3 columns (pure grid) ---- */
+.bl-thread {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 0.7em;
+  align-items: center;
+  margin: 0;
+}
+.bl-thread .seg {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5em;
+  border-radius: 8px;
+  padding: 0.28em 0.8em;
+  font-size: 0.5em;
+  line-height: 1.2;
+}
+.bl-thread .seg .t-k {
+  flex: 0 0 auto;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.86em;
+  white-space: nowrap;
+}
+.bl-thread .seg .cap { color: $qe-body; font-weight: 600; }
+.bl-thread .seg .cap strong { color: $qe-navy; }
+
+/* shock band: joins DSGE (col 1) + het-agent (col 2) along the advanced rung.
+   Flat tinted fill reuses the deck's .contrib.hero idiom (no off-system gradient). */
+.bl-thread.shock .seg {
+  grid-column: 1 / span 2;
+  background: #fdf1ef;
+  border: 1px solid #eebfba;
+}
+.bl-thread.shock .seg .t-k { color: $qe-coral; }
+
+/* wealth band: joins het-agent (col 2) + agent-based (col 3) along the intro rung */
+.bl-thread.wealth .seg {
+  grid-column: 2 / span 2;
+  background: #fbf3e2;
+  border: 1px solid #ecd9ad;
+}
+.bl-thread.wealth .seg .t-k { color: $qe-amber; }
+
+/* calibration footnote */
+.bl-calib {
+  margin-top: 0.45em;
+  font-size: 0.5em;
+  color: $qe-muted;
+  text-align: center;
+  line-height: 1.28;
+}
+.bl-calib strong { color: $qe-navy; }
+.bl-calib code {
+  font-family: $font-family-monospace;
+  font-size: 0.92em;
+  color: $qe-teal;
+  background: $qe-bg-soft;
+  border-radius: 4px;
+  padding: 0.05em 0.3em;
+}
+
+/* "Shared Specification -> Decisions -> Jupyter Notebooks" — single-row flow.
+   Decisions is the focal point (deck .card.primary idiom): a tinted, blue
+   left-accented card whose four "what we decide next" items read as a numbered
+   2x2 grid. The input/output ends are lighter supporting pills. Pure flex/grid. */
+.spec-flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45em;
+  margin: 0.6em auto 0;
+}
+.spec-end {
+  flex: 0 1 auto;
+  max-width: 7.6em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background: $qe-bg-soft;
+  border: 1px solid $qe-border;
+  border-radius: 8px;
+  padding: 0.5em 0.7em;
+}
+.spec-end .se-k {
+  font-size: 0.4em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $qe-muted;
+  margin-bottom: 0.2em;
+}
+.spec-end .se-t {
+  font-size: 0.5em;
+  font-weight: 700;
+  line-height: 1.16;
+  color: $qe-navy;
+}
+.spec-end .se-sub {
+  margin-top: 0.16em;
+  font-size: 0.4em;
+  font-weight: 600;
+  color: $qe-muted;
+  line-height: 1.22;
+}
+.spec-end.out { background: #eef6fd; border-color: #bcd9f0; }
+.spec-end.out .se-t { color: $qe-blue; }
+.spec-core {
+  flex: 0 1 auto;
+  background: #eef6fd;
+  border: 1px solid #bcd9f0;
+  border-left: 6px solid $qe-blue;
+  border-radius: 8px;
+  padding: 0.5em 0.95em 0.56em;
+  box-shadow: 0 2px 6px rgba(16, 42, 67, 0.09);
+}
+.spec-core .sc-k {
+  display: block;
+  font-size: 0.4em;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: $qe-navy;
+  margin-bottom: 0.2em;
+}
+.spec-core .sc-label {
+  display: block;
+  font-size: 0.62em;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: $qe-blue;
+  line-height: 1;
+  margin-bottom: 0.32em;
+}
+.spec-core .sc-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.22em 0.85em;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.spec-core .sc-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  font-size: 0.46em;
+  font-weight: 700;
+  line-height: 1.15;
+  color: $qe-navy;
+  white-space: nowrap;
+  margin: 0;
+}
+.spec-core .sc-list .n {
+  flex: 0 0 auto;
+  width: 1.5em;
+  height: 1.5em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: $qe-blue;
+  color: #ffffff;
+  font-size: 0.85em;
+  font-weight: 700;
+}
+.spec-arrow {
+  flex: 0 0 auto;
+  align-self: center;
+  font-size: 0.8em;
+  line-height: 1;
+  color: $qe-blue;
+  font-weight: 700;
 }

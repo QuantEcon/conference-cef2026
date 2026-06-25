@@ -187,11 +187,28 @@ shape of it.
     <div class="bl-thread shock"><div class="seg"><span class="t-k">Same 25bp shock &rarr;</span><span class="cap">overlay the two IRFs &mdash; the signature <strong>RANK vs HANK</strong> comparison of the last decade</span></div></div>
   </div>
   <div class="spec-flow">
-    <div class="spec-node"><span class="sn-t">Shared Specification</span></div>
+    <div class="spec-end in">
+      <span class="se-k">Input</span>
+      <span class="se-t">Shared Specification</span>
+      <span class="se-sub">the agreed standard</span>
+    </div>
     <div class="spec-arrow">&rarr;</div>
-    <div class="spec-node mid"><span class="sn-t">Decisions</span><span class="sn-list">income process &amp; grids &middot; model closure &middot; calibration targets &middot; comparison contract</span></div>
+    <div class="spec-core">
+      <span class="sc-k">What we decide next</span>
+      <span class="sc-label">Decisions</span>
+      <ol class="sc-list">
+        <li><span class="n">1</span>Income process &amp; grids</li>
+        <li><span class="n">2</span>Model closure</li>
+        <li><span class="n">3</span>Calibration targets</li>
+        <li><span class="n">4</span>Comparison contract</li>
+      </ol>
+    </div>
     <div class="spec-arrow">&rarr;</div>
-    <div class="spec-node out"><span class="sn-t">Jupyter Notebooks</span><span class="sn-sub">with a model to solve</span></div>
+    <div class="spec-end out">
+      <span class="se-k">Output</span>
+      <span class="se-t">Jupyter Notebooks</span>
+      <span class="se-sub">with a model to solve</span>
+    </div>
   </div>
 </div>
 ```

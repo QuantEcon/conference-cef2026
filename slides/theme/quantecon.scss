@@ -655,16 +655,20 @@ $code-block-font-size: 0.6em;
   padding: 0.05em 0.3em;
 }
 
-/* "Shared Specification -> Decisions -> Jupyter Notebooks" — single-row flow */
+/* "Shared Specification -> Decisions -> Jupyter Notebooks" — single-row flow.
+   Decisions is the focal point (deck .card.primary idiom): a tinted, blue
+   left-accented card whose four "what we decide next" items read as a numbered
+   2x2 grid. The input/output ends are lighter supporting pills. Pure flex/grid. */
 .spec-flow {
   display: flex;
-  align-items: stretch;
+  align-items: center;
   justify-content: center;
-  gap: 0.5em;
-  margin: 0.85em auto 0;
+  gap: 0.45em;
+  margin: 0.6em auto 0;
 }
-.spec-node {
+.spec-end {
   flex: 0 1 auto;
+  max-width: 7.6em;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -672,35 +676,95 @@ $code-block-font-size: 0.6em;
   background: $qe-bg-soft;
   border: 1px solid $qe-border;
   border-radius: 8px;
-  padding: 0.6em 0.85em;
+  padding: 0.5em 0.7em;
 }
-.spec-node .sn-t {
+.spec-end .se-k {
+  font-size: 0.4em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $qe-muted;
+  margin-bottom: 0.2em;
+}
+.spec-end .se-t {
   font-size: 0.5em;
   font-weight: 700;
   line-height: 1.16;
   color: $qe-navy;
 }
-.spec-node.mid { max-width: 13em; }
-.spec-node.mid .sn-t { color: $qe-blue; }
-.spec-node .sn-list {
-  margin-top: 0.4em;
+.spec-end .se-sub {
+  margin-top: 0.16em;
   font-size: 0.4em;
   font-weight: 600;
   color: $qe-muted;
-  line-height: 1.3;
+  line-height: 1.22;
 }
-.spec-node.out { background: $qe-blue; border-color: $qe-blue; }
-.spec-node.out .sn-t { color: #ffffff; }
-.spec-node.out .sn-sub {
-  margin-top: 0.18em;
+.spec-end.out { background: #eef6fd; border-color: #bcd9f0; }
+.spec-end.out .se-t { color: $qe-blue; }
+.spec-core {
+  flex: 0 1 auto;
+  background: #eef6fd;
+  border: 1px solid #bcd9f0;
+  border-left: 6px solid $qe-blue;
+  border-radius: 8px;
+  padding: 0.5em 0.95em 0.56em;
+  box-shadow: 0 2px 6px rgba(16, 42, 67, 0.09);
+}
+.spec-core .sc-k {
+  display: block;
   font-size: 0.4em;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.9);
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: $qe-navy;
+  margin-bottom: 0.2em;
+}
+.spec-core .sc-label {
+  display: block;
+  font-size: 0.62em;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: $qe-blue;
+  line-height: 1;
+  margin-bottom: 0.32em;
+}
+.spec-core .sc-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.22em 0.85em;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.spec-core .sc-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  font-size: 0.46em;
+  font-weight: 700;
+  line-height: 1.15;
+  color: $qe-navy;
+  white-space: nowrap;
+  margin: 0;
+}
+.spec-core .sc-list .n {
+  flex: 0 0 auto;
+  width: 1.5em;
+  height: 1.5em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: $qe-blue;
+  color: #ffffff;
+  font-size: 0.85em;
+  font-weight: 700;
 }
 .spec-arrow {
   flex: 0 0 auto;
   align-self: center;
-  font-size: 0.72em;
+  font-size: 0.8em;
+  line-height: 1;
   color: $qe-blue;
   font-weight: 700;
 }

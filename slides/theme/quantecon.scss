@@ -654,3 +654,36 @@ $code-block-font-size: 0.6em;
   border-radius: 4px;
   padding: 0.05em 0.3em;
 }
+
+/* "What to agree together" spec table under the ladder (matches qe-matrix style) */
+.bl-spec-lead {
+  margin: 0.5em 0 0;
+  font-size: 0.46em;
+  text-align: center;
+  color: $qe-muted;
+}
+.bl-spec-lead strong { color: $qe-navy; }
+.spec-table {
+  margin: 0.35em auto 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.46em;
+  max-width: 72%;
+}
+.spec-table th {
+  text-align: left;
+  background: $qe-navy;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.28em 0.85em;
+}
+.spec-table th:first-child { border-top-left-radius: 6px; }
+.spec-table th:last-child  { border-top-right-radius: 6px; }
+.spec-table td {
+  padding: 0.26em 0.85em;
+  border-bottom: 1px solid $qe-border;
+  color: $qe-body;
+  line-height: 1.25;
+}
+.spec-table tr:last-child td { border-bottom: none; }
+.spec-table .k { font-weight: 700; color: $qe-navy; white-space: nowrap; }

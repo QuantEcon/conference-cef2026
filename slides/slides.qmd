@@ -186,7 +186,16 @@ shape of it.
 
     <div class="bl-thread shock"><div class="seg"><span class="t-k">Same 25bp shock &rarr;</span><span class="cap">overlay the two IRFs &mdash; the signature <strong>RANK vs HANK</strong> comparison of the last decade</span></div></div>
   </div>
-  <p class="bl-calib">Comparability needs a shared calibration &amp; solution spec &mdash; income process, grids, and the model closure &mdash; which we&rsquo;d <strong>agree together</strong> (starting from defaults like <code>Rouwenhorst, N=7</code>) and ship as template Jupyter notebooks.</p>
+  <p class="bl-spec-lead">A shared spec to <strong>agree together</strong> &mdash; then shipped as template Jupyter notebooks:</p>
+  <table class="spec-table">
+    <thead><tr><th>To agree together</th><th>Starting point</th></tr></thead>
+    <tbody>
+      <tr><td class="k">Income process &amp; grids</td><td>Rouwenhorst, N=7</td></tr>
+      <tr><td class="k">Model closure</td><td>Taylor rule, shock, fiscal rule</td></tr>
+      <tr><td class="k">Calibration targets</td><td>a target MPC, not just wealth</td></tr>
+      <tr><td class="k">Comparison contract</td><td>IRFs / moments / ensembles, + tolerances</td></tr>
+    </tbody>
+  </table>
 </div>
 ```
 

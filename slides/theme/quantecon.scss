@@ -151,8 +151,8 @@ $code-block-font-size: 0.6em;
 }
 .reveal #title-slide .date { display: none; }
 // Published-deck URL, pinned to the bottom-left of the title slide.
-.reveal #title-slide::after {
-  content: "quantecon.github.io/conference-cef2026";
+// Injected as a real <a> (see include-after-body) so it's clickable & selectable.
+.reveal #title-slide .title-url {
   position: absolute;
   left: 0;
   bottom: 22px;
@@ -160,7 +160,9 @@ $code-block-font-size: 0.6em;
   font-weight: 600;
   letter-spacing: 0.01em;
   color: #9ed0f5;
+  border-bottom: none;
 }
+.reveal #title-slide .title-url:hover { color: #ffffff; }
 
 /* ---------- Dark slide (closing) ---------- */
 .reveal section.dark-slide h1,

@@ -20,6 +20,22 @@ format:
     hash: true
     center: true
     embed-resources: true
+    include-after-body:
+      text: |
+        <script>
+          (function () {
+            var s = document.getElementById('title-slide');
+            if (!s || s.querySelector('.title-url')) return;
+            var a = document.createElement('a');
+            a.className = 'title-url';
+            a.href = 'https://quantecon.github.io/conference-cef2026/';
+            a.target = '_blank';
+            a.rel = 'noopener';
+            a.setAttribute('data-preview-link', 'false');
+            a.textContent = 'quantecon.github.io/conference-cef2026';
+            s.appendChild(a);
+          })();
+        </script>
     title-slide-attributes:
       data-background-color: "#07365c"
 ---

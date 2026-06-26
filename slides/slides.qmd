@@ -40,7 +40,7 @@ format:
       data-background-color: "#07365c"
 ---
 
-## A dozen serious toolkits — no way to find them {.spread}
+## A dozen serious toolkits — no easy way to find them {.spread}
 
 The field has a dozen mature toolkits, across **MATLAB, Python, and Julia**:
 
@@ -59,9 +59,9 @@ The field has a dozen mature toolkits, across **MATLAB, Python, and Julia**:
   <span class="chip">AGENTBLOCKS</span>
 </div>
 
-Each has genuinely distinct strengths. But researchers have **no way to compare them**, **no shared library of canonical models**, and **no on-ramp to the ecosystem as a whole**.
+Each has genuinely distinct strengths. But researchers have **no easy way to compare them**, **no shared library of canonical models**, and **no on-ramp to the ecosystem as a whole**.
 
-<p class="pull center">Real diversity in how we solve models — and no way to see across it.</p>
+<p class="pull center">Real diversity in how we solve models — and no easy way to see across it.</p>
 
 ::: {.notes}
 Good afternoon — I'm Matt McKay from QuantEcon. In the next ten minutes I want to
@@ -69,9 +69,9 @@ put one concrete proposal on the table: a community-owned reference library that
 documents the same canonical models across all of our toolkits.
 
 So — a dozen serious toolkits, three languages. Each genuinely distinct. But
-there's no place to put them side by side. New users default to whatever
+there's no single place to put them side by side. New users default to whatever
 their advisor uses; experienced researchers stay locked into the first tool they
-learned. We have plurality, but no one can actually *see* it or compare across
+learned. We have plurality, but it's hard to actually *see* it or compare across
 it.
 :::
 
@@ -270,7 +270,7 @@ Rouwenhorst with seven states are a starting point, not a decree.
 One priority, and two things it builds toward. The priority — first and
 foremost — is a community asset: the field's first cross-toolkit reference,
 built by and for the community. It's a single entry point that lowers the search
-cost of a fragmented field — a dozen toolkits with no way to compare them; it
+cost of a fragmented field — a dozen toolkits with no easy way to compare them; it
 lets researchers put toolkits side by side on the same models; and it gives each
 project a showcase through its hero tutorial. And it's all published on Jupyter
 Book, the modern code-first platform we already run at scale. That's the

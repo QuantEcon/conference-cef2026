@@ -40,12 +40,12 @@ format:
       data-background-color: "#07365c"
 ---
 
-## A dozen serious toolkits — no easy way to find them {.spread}
+## A dozen toolkits — no shared reference {.spread}
 
 The field has a dozen mature toolkits, across **MATLAB, Python, and Julia**:
 
 <div class="chips">
-  <span class="chip mat">Dynare <span class="lang">MATLAB</span></span>
+  <span class="chip mat">Dynare <span class="lang">MATLAB / Jl</span></span>
   <span class="chip mat">VFI Toolkit <span class="lang">MATLAB</span></span>
   <span class="chip mat">GDSGE <span class="lang">MATLAB</span></span>
   <span class="chip py">G-Cubed / SYM <span class="lang">Python / SYM</span></span>

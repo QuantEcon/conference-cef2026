@@ -109,7 +109,7 @@ and executable — every model runs, published on Jupyter Book. It's the shared
 library, and the on-ramp, the field has been missing. Now, how it's built.
 :::
 
-## The proposal — same model, multiple tools {.spread}
+## The proposal {.spread}
 
 Each project authors its own work and contributes **two things**:
 
@@ -149,7 +149,7 @@ Each project authors its own work and contributes **two things**:
 </tbody>
 </table>
 
-<p class="small muted">A <strong>hero tutorial</strong> enables the author to showcase the toolkit &mdash; for example, G-Cubed could choose a multi-region CGE model as a unique problem this package can solve. Agent-based is the least-settled family &mdash; Boltzmann&ndash;Gibbs and Lengnick (2013) are a <strong>starting point</strong>; suggestions for a better baseline welcome.</p>
+<p class="small muted">A <strong>hero tutorial</strong> enables the author to showcase the toolkit &mdash; for example, G-Cubed could choose a multi-region CGE model as a unique problem this package can solve. The <strong>baseline models</strong> proposed for each family are a <strong>starting point</strong> and open to discussion.</p>
 
 ::: {.notes}
 Here's the proposal, made concrete. A community-owned library — same model,

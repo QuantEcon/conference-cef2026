@@ -40,14 +40,16 @@ format:
       data-background-color: "#07365c"
 ---
 
-## A dozen toolkits — no shared reference {.spread}
+## Over a dozen toolkits — no shared reference {.spread}
 
-The field has a dozen mature toolkits, across **MATLAB, Python, and Julia**:
+The field has over a dozen mature toolkits, across **MATLAB, Python, and Julia**:
 
 <div class="chips">
   <span class="chip mat">Dynare <span class="lang">MATLAB / Jl</span></span>
   <span class="chip mat">VFI Toolkit <span class="lang">MATLAB</span></span>
   <span class="chip mat">GDSGE <span class="lang">MATLAB</span></span>
+  <span class="chip mat">RISE <span class="lang">MATLAB</span></span>
+  <span class="chip mat">HetSol <span class="lang">MATLAB</span></span>
   <span class="chip py">G-Cubed / SYM <span class="lang">Python / SYM</span></span>
   <span class="chip py">HARK / Econ-ARK <span class="lang">Python</span></span>
   <span class="chip py">GEModelTools <span class="lang">Python</span></span>
@@ -68,7 +70,7 @@ Good afternoon — I'm Matt McKay from QuantEcon. In the next ten minutes I want
 put one concrete proposal on the table: a community-owned reference library that
 documents the same canonical models across all of our toolkits.
 
-So — a dozen serious toolkits, three languages. Each genuinely distinct. But
+So — over a dozen serious toolkits, three languages. Each genuinely distinct. But
 there's no single place to put them side by side. New users default to whatever
 their advisor uses; experienced researchers stay locked into the first tool they
 learned. We have plurality, but it's hard to actually *see* it or compare across
@@ -134,12 +136,12 @@ Each project authors its own work and contributes **two things**:
   <tr>
     <td class="cls">Heterogeneous-agent</td>
     <td class="base">Aiyagari &middot; 1-asset HANK</td>
-    <td class="tools"><span class="chip mat">VFI Toolkit</span><span class="chip py">HARK</span><span class="chip py">Dolo</span><span class="chip py">GEModelTools</span><span class="chip py">SSJ</span><span class="chip mat">GDSGE</span><span class="chip jl">BASEforHANK</span><span class="chip mat">Dynare v7</span></td>
+    <td class="tools"><span class="chip mat">VFI Toolkit</span><span class="chip mat">HetSol</span><span class="chip py">HARK</span><span class="chip py">Dolo</span><span class="chip py">GEModelTools</span><span class="chip py">SSJ</span><span class="chip mat">GDSGE</span><span class="chip jl">BASEforHANK</span><span class="chip mat">Dynare v7</span></td>
   </tr>
   <tr>
     <td class="cls">Representative-agent / DSGE / CGE</td>
     <td class="base">RBC &middot; 3-eq NK (RANK)</td>
-    <td class="tools"><span class="chip mat">Dynare</span><span class="chip py">Dolo</span><span class="chip py">SSJ</span><span class="chip mat">GDSGE</span><span class="chip py">G-Cubed</span><span class="chip jl">Dynare.jl</span></td>
+    <td class="tools"><span class="chip mat">Dynare</span><span class="chip py">Dolo</span><span class="chip py">SSJ</span><span class="chip mat">GDSGE</span><span class="chip mat">RISE</span><span class="chip py">G-Cubed</span><span class="chip jl">Dynare.jl</span></td>
   </tr>
   <tr>
     <td class="cls">Agent-based</td>
@@ -272,7 +274,7 @@ Rouwenhorst with seven states are a starting point, not a decree.
 One priority, and two things it builds toward. The priority — first and
 foremost — is a community asset: the field's first cross-toolkit reference,
 built by and for the community. It's a single entry point that lowers the search
-cost of a fragmented field — a dozen toolkits with no easy way to compare them; it
+cost of a fragmented field — over a dozen toolkits with no easy way to compare them; it
 lets researchers put toolkits side by side on the same models; and it gives each
 project a showcase through its hero tutorial. And it's all published on Jupyter
 Book, the modern code-first platform we already run at scale. That's the

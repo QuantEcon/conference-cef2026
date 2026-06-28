@@ -137,7 +137,7 @@ Each project authors its own work and contributes **two things**:
     <td class="tools"><span class="chip mat">VFI Toolkit</span><span class="chip py">HARK</span><span class="chip py">Dolo</span><span class="chip py">GEModelTools</span><span class="chip py">SSJ</span><span class="chip mat">GDSGE</span><span class="chip jl">BASEforHANK</span><span class="chip mat">Dynare v7</span></td>
   </tr>
   <tr>
-    <td class="cls">Representative-agent / DSGE</td>
+    <td class="cls">Representative-agent / DSGE / CGE</td>
     <td class="base">RBC &middot; 3-eq NK (RANK)</td>
     <td class="tools"><span class="chip mat">Dynare</span><span class="chip py">Dolo</span><span class="chip py">SSJ</span><span class="chip mat">GDSGE</span><span class="chip py">G-Cubed</span><span class="chip jl">Dynare.jl</span></td>
   </tr>
@@ -149,7 +149,7 @@ Each project authors its own work and contributes **two things**:
 </tbody>
 </table>
 
-<p class="small muted">AGENTBLOCKS contributes reusable components, not a runnable model. Agent-based is the least-settled family &mdash; Boltzmann&ndash;Gibbs and Lengnick (2013) are a <strong>starting point</strong>; suggestions for a better baseline welcome.</p>
+<p class="small muted">A <strong>hero tutorial</strong> enables the author to showcase the toolkit &mdash; for example, G-Cubed could choose a multi-region CGE model as a unique problem this package can solve. Agent-based is the least-settled family &mdash; Boltzmann&ndash;Gibbs and Lengnick (2013) are a <strong>starting point</strong>; suggestions for a better baseline welcome.</p>
 
 ::: {.notes}
 Here's the proposal, made concrete. A community-owned library — same model,
@@ -161,8 +161,10 @@ projects in that row so a reader can open Aiyagari in VFI Toolkit next to
 Aiyagari in HARK next to Aiyagari in SSJ — same notation, directly comparable —
 and then step up to the 1-asset HANK baseline the same way. And each project
 also contributes an author's-choice hero showcase for the problem where its
-toolkit shines. Exact coverage is for the working group to set; this is the
-shape of it.
+toolkit shines. G-Cubed, for example, could choose a multi-region CGE model — a
+unique problem this package can solve that none of the shared baselines reach,
+which is where CGE fits in this proposal: as a showcase, not a baseline. Exact
+coverage is for the working group to set; this is the shape of it.
 :::
 
 ## What a "shared baseline" means {.spread}

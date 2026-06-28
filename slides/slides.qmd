@@ -77,7 +77,7 @@ it.
 
 ## A Community Reference Library {.spread}
 
-<p class="lead">A single, community-owned library documenting the field's canonical models — **the same model in every toolkit**, side by side, open and runnable.</p>
+<p class="lead">A single, community-owned library documenting the field's canonical models — **the same model for every toolkit family**, side by side, open and runnable.</p>
 
 ```{=html}
 <div class="cards three">

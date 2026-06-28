@@ -169,7 +169,7 @@ which is where CGE fits in this proposal: as a showcase, not a baseline. Exact
 coverage is for the working group to set; this is the shape of it.
 :::
 
-## What a "shared baseline" means {.spread}
+## What a "shared baseline" means — one idea {.spread}
 
 ```{=html}
 <div class="bl-ladder-wrap">

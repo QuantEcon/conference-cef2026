@@ -426,6 +426,8 @@ high-visibility, high-impact ask.
 
 <p style="margin-top:1em">[**Register your project →**](https://github.com/QuantEcon/conference-cef2026/issues/new/choose) github.com/QuantEcon/conference-cef2026 · Let's talk after the session.</p>
 
+<p class="small muted" style="margin-top:0.5em">[mmcky@quantecon.org](mailto:mmcky@quantecon.org)</p>
+
 ::: {.notes}
 To close. This is the field's first cross-toolkit reference, and it only works
 if it's built by the community that owns these tools — that's all of you. Two

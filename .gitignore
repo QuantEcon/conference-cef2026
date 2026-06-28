@@ -1,5 +1,6 @@
 # Quarto / reveal.js build artifacts
 slides/slides.html
+slides/slides.pdf
 slides/slides_files/
 slides/.quarto/
 _site/

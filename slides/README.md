@@ -11,6 +11,7 @@ branding, built with [Quarto](https://quarto.org).
 | [`slides.qmd`](slides.qmd) | The deck (Markdown + reveal.js). Speaker notes are in `::: {.notes}` blocks. |
 | [`theme/quantecon.scss`](theme/quantecon.scss) | QuantEcon brand theme — palette + fonts. |
 | [`assets/`](assets/) | Logo marks. |
+| [`experiments/`](experiments/) | Scratch design experiments (e.g. a Venn-diagram preview) — not part of the deck. |
 
 ## Build locally
 

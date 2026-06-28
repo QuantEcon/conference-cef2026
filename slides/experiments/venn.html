@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Toolkit overlap — Venn experiment</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,600&display=swap');
+
+  :root {
+    --blue:#0072bc; --teal:#005f5f; --coral:#d8655e; --navy:#07365c;
+    --ink:#2b2b2b; --muted:#6b7785; --border:#dbe3ec; --soft:#f4f7fa;
+  }
+  html,body { margin:0; background:#fff; }
+  body {
+    font-family:"Source Sans Pro",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    width:1280px; height:720px;
+  }
+  .title {
+    text-align:center; font-weight:700; font-size:30px; color:var(--navy);
+    margin:26px 0 0; letter-spacing:-0.01em;
+  }
+  .stage { position:relative; width:1280px; height:600px; }
+  svg.venn { position:absolute; inset:0; width:100%; height:100%; }
+
+  .set-title { position:absolute; transform:translate(-50%,-50%); width:240px; text-align:center; font-weight:700; font-size:20px; line-height:1.1; }
+  .set-title small { display:block; font-weight:600; font-size:12.5px; color:var(--muted); margin-top:3px; }
+  .ha   { color:var(--blue); }
+  .dsge { color:var(--teal); }
+  .abm  { color:var(--coral); }
+
+  .zone {
+    position:absolute; transform:translate(-50%,-50%); text-align:center;
+    font-weight:700; font-size:14px; color:#8a4b00;
+    letter-spacing:0.05em; text-transform:uppercase;
+  }
+
+  .pill {
+    position:absolute; transform:translate(-50%,-50%);
+    font-size:12.5px; font-weight:600; line-height:1; white-space:nowrap;
+    padding:4px 9px; border-radius:999px;
+    border:1px solid var(--border); background:#fff; color:var(--ink);
+    box-shadow:0 1px 2px rgba(16,42,67,.06);
+  }
+  .pill.py  { border-color:#bcd9f0; background:#eaf4fc; }
+  .pill.jl  { border-color:#cfc4ec; background:#f1ecfb; }
+  .pill.mat { border-color:#f0dcb0; background:#fbf3e2; }
+  .pill.cpp { border-color:#c3e3c8; background:#eaf6ec; }
+
+  .legend {
+    position:absolute; left:50%; bottom:6px; transform:translateX(-50%);
+    display:flex; gap:18px; font-size:13px; color:var(--muted); align-items:center;
+  }
+  .legend span { display:inline-flex; align-items:center; gap:6px; }
+  .legend i { width:13px; height:13px; border-radius:3px; border:1px solid; display:inline-block; }
+  .legend .py  { background:#eaf4fc; border-color:#bcd9f0; }
+  .legend .jl  { background:#f1ecfb; border-color:#cfc4ec; }
+  .legend .mat { background:#fbf3e2; border-color:#f0dcb0; }
+  .legend .cpp { background:#eaf6ec; border-color:#c3e3c8; }
+</style>
+</head>
+<body>
+  <div class="title">How the toolkits overlap</div>
+  <div class="stage">
+    <svg class="venn" viewBox="0 0 1280 600" preserveAspectRatio="xMidYMid meet">
+      <circle cx="360" cy="300" r="235" fill="#0072bc" fill-opacity="0.10" stroke="#0072bc" stroke-opacity="0.55" stroke-width="2"/>
+      <circle cx="660" cy="300" r="235" fill="#005f5f" fill-opacity="0.10" stroke="#005f5f" stroke-opacity="0.55" stroke-width="2"/>
+      <circle cx="1085" cy="300" r="148" fill="#d8655e" fill-opacity="0.10" stroke="#d8655e" stroke-opacity="0.55" stroke-width="2"/>
+    </svg>
+
+    <!-- Set titles (inside each circle) -->
+    <div class="set-title ha" style="left:300px; top:200px;">Heterogeneous agents<small>incomplete markets</small></div>
+    <div class="set-title dsge" style="left:735px; top:200px;">DSGE / aggregate dynamics<small>rep-agent · IRFs</small></div>
+    <div class="set-title abm" style="left:1085px; top:212px;">Agent-based<small>macro ABMs</small></div>
+
+    <!-- Overlap zone label -->
+    <div class="zone" style="left:510px; top:215px;">HANK ·<br>het-agent GE</div>
+
+    <!-- Heterogeneous-agents only -->
+    <div class="pill py"  style="left:292px; top:338px;">HARK</div>
+    <div class="pill mat" style="left:292px; top:394px;">VFI Toolkit</div>
+
+    <!-- Overlap (HA ∩ DSGE) -->
+    <div class="pill py" style="left:510px; top:300px;">GEModelTools</div>
+    <div class="pill py" style="left:510px; top:342px;">sequence-jacobian</div>
+    <div class="pill jl" style="left:510px; top:384px;">BASEforHANK</div>
+    <div class="pill py" style="left:510px; top:426px;">Dolo / DolARK</div>
+
+    <!-- DSGE only -->
+    <div class="pill mat" style="left:745px; top:316px;">Dynare</div>
+    <div class="pill mat" style="left:745px; top:372px;">GDSGE</div>
+    <div class="pill mat" style="left:745px; top:428px;">G-Cubed / SYM</div>
+
+    <!-- Agent-based (detached) -->
+    <div class="pill py"  style="left:1085px; top:285px;">Mesa</div>
+    <div class="pill cpp" style="left:1085px; top:330px;">Eurace / FLAME</div>
+    <div class="pill"     style="left:1085px; top:375px;">AGENTBLOCKS</div>
+
+    <div class="legend">
+      <span><i class="py"></i>Python</span>
+      <span><i class="jl"></i>Julia</span>
+      <span><i class="mat"></i>MATLAB</span>
+      <span><i class="cpp"></i>C++</span>
+      <span><i style="background:#fff;border-color:#dbe3ec"></i>other</span>
+    </div>
+  </div>
+</body>
+</html>
